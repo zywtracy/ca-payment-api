@@ -48,6 +48,7 @@ router.post("/achpaymentstatusupdate", async (req: any, res) => {
             decoded: dat.decoded ,
         }
         let result = await qryCntrl.insACHWebhookRaw(param);
+        console.log(result);
         reusable.accessLog(req, new Date().getTime() - dt, result.success);
         res.json(result);
     } catch (e: any) {
